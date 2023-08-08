@@ -13,9 +13,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-artemis'
+//	implementation 'org.springframework.boot:spring-boot-starter-artemis'
 	implementation 'org.springframework.boot:spring-boot-starter-json'
-	runtimeOnly 'org.apache.activemq:artemis-jakarta-server'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	runtimeOnly 'org.apache.activemq:artemis-jakarta-server'
+	implementation 'org.springframework.boot:spring-boot-starter-activemq'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
