@@ -1,6 +1,7 @@
-package hello;
+package springDocumnetationVer;
 
 
+import springDocumnetationVer.Email;
 
 //Receiver -> Message-dricen POJO
 //@Component

@@ -18,16 +18,17 @@ public class NewConsumer {
     @Autowired
     private Queue queue;
 
+    //Queue에서 Json을 받아서 JmsTemplate을 이용해 비디오 정보 객체 클래스로 변환
     @GetMapping("/message")
-    public Student consumeMessage() {
-        Student student = null;
+    public DeidetificationVideoInfo consumeMessage() {
+        DeidetificationVideoInfo deidetificationVideoInfo = null;
         try {
             ObjectMapper mapper = new ObjectMapper();
             String jsonMessage = (String) jmsTemplate.receiveAndConvert(queue);
-            student = mapper.readValue(jsonMessage, Student.class);
+            deidetificationVideoInfo = mapper.readValue(jsonMessage, DeidetificationVideoInfo.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return student;
+        return deidetificationVideoInfo;
     }
 }

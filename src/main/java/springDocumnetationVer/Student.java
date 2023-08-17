@@ -1,4 +1,4 @@
-package hello;
+package springDocumnetationVer;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -21,16 +21,17 @@ public class Producer {
     @Autowired
     private Queue queue;
 
+    //비디오 정보 객체를 받아서 JSON으로 변환 후 ActiveMq서버의 queue로 보냄
     @PostMapping("/message")
-    public Student sendMessage(@RequestBody Student student) {
+    public DeidetificationVideoInfo sendMessage(@RequestBody DeidetificationVideoInfo deidetificationVideoInfo) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            String studentAsJson = mapper.writeValueAsString(student);
-            jmsTemplate.convertAndSend(queue,studentAsJson);
+            String deidetificationVideoInfoAsJson = mapper.writeValueAsString(deidetificationVideoInfo);
+            jmsTemplate.convertAndSend(queue,deidetificationVideoInfoAsJson);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return student;
+        return deidetificationVideoInfo;
     }
 }
